@@ -1,9 +1,19 @@
 import * as assert from 'assert'
-import App from '../src/app'
+import Util from '../util'
 
-let app;
+// Classes
+import App from '../src/app'
+import SolutionApp from '../solutions/app'
+
+const args = Util.getArgs()
+
+let app
 beforeEach(() => {
-    app = new App()
+    if (args.s) {
+        app = new SolutionApp()
+    } else {
+        app = new App()
+    }
 })
 
 describe('App', () => {
@@ -13,3 +23,4 @@ describe('App', () => {
         })
     })
 })
+

@@ -4,7 +4,8 @@
   "description": "A set of Javascript assignments with tests to validate completion",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive --require babel-register"
+    "test": "mocha --recursive --require babel-register",
+    "test-solutions": "mocha -s --recursive --require  babel-register"
   },
   "repository": {
     "type": "git",
