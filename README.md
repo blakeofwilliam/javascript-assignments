@@ -7,14 +7,19 @@ In a Terminal run the following commands one at a time (enter your password when
 ```bash
 # Change directories to your `home` directory
 cd ~
+
 # Make a new directory called `development`
 mkdir -p development
+
 # Change directories to this new directory
 cd development
+
 # Clone this git repo to your local machine
 git clone git@github.com:blakeofwilliam/javascript-assignments.git
+
 # Change directories to the project folder
 cd javascript-assignments
+
 # Open the project folder in Visual Studio Code
 code javascript-assignments
 ```
