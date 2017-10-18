@@ -7,8 +7,8 @@ beforeEach(() => {
 })
 
 describe('App', () => {
-    describe('#constructor()', () => {
-        it('should set isInitialized', () => {
+    describe('constructor()', () => {
+        it('should set instance `name` property to `Javascript`', () => {
             assert.equal(app.name, 'Javascript')
         })
     })
