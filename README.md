@@ -1,8 +1,26 @@
 # Javascript Assignments
 A set of Javascript assignments with tests to validate completion
 
+## Using this repo
+In a Terminal run the following commands one at a time (enter your password when/if prompted):
+
+```bash
+# Change directories to your `home` directory
+cd ~
+# Make a new directory called `development`
+mkdir -p development
+# Change directories to this new directory
+cd development
+# Clone this git repo to your local machine
+git clone git@github.com:blakeofwilliam/javascript-assignments.git
+# Change directories to the project folder
+cd javascript-assignments
+# Open the project folder in Visual Studio Code
+code javascript-assignments
+```
+
 ## Initial setup
-Before doing anything, run `npm i` to install this project's dependencies.
+Before doing anything in the project, run `npm i` to install this project's dependencies.
 
 ### Basic project hierarchy
 This project is set up in two basic directories: 
