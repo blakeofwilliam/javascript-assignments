@@ -28,7 +28,7 @@ code javascript-assignments
 Before doing anything in the project, run `npm i` to install this project's dependencies.
 
 ### Basic project hierarchy
-This project is set up in two basic directories: 
+This project is set up in three basic directories: 
 - **prompts**: This is where the prompts for each assignment will live
 - **src**: This is where the Javascript files you will be working with will live
 - **test**: This is where the tests used to validate each assignment will live
