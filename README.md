@@ -2,7 +2,9 @@
 A set of Javascript assignments with tests to validate completion
 
 ## Using this repo
-In a Terminal run the following commands one at a time (enter your password when/if prompted):
+In a Terminal run the following commands one at a time; you can ignore the lines starting with `#`; they're just comments. 
+
+Enter your password when/if prompted:
 
 ```bash
 # Change directories to your `home` directory
