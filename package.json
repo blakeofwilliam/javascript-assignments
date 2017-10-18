@@ -1,0 +1,30 @@
+{
+  "name": "javascript-assignments",
+  "version": "1.0.0",
+  "description": "A set of Javascript assignments with tests to validate completion",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive --require babel-register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakeofwilliam/javascript-assignments.git"
+  },
+  "author": "Blake Williams <blakethewilliams@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/blakeofwilliam/javascript-assignments/issues"
+  },
+  "homepage": "https://github.com/blakeofwilliam/javascript-assignments#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "mocha": "^4.0.1",
+    "sinon": "^4.0.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}
