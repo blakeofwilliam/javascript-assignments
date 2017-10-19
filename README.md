@@ -38,4 +38,12 @@ This project is set up in three basic directories:
 ### Testing that your code works
 In order to validate that your code works, simply run `npm test` and ensure that all of the tests pass.
 
+### Basic git commands for later
+`git fetch` fetches all branches from the remote repo
+
+`git branch -a` lists all available branches
+
+`git checkout BRANCH_NAME`
+
+`git pull origin BRANCH_NAME` pulls the latest version of a branch from the remote repo
 
