@@ -40,3 +40,28 @@ _Uses the `instanceof` operator and `Object.assign()`_
 Example: `.getObjectKeys({ a: 'b', b: 'c' })` should return `['a', 'b']`
 
 _Uses the `instanceof` operator and `Object.keys()`_
+
+**getObjectValues()**
+- accepts a single argument
+- returns an empty Array if the argument is not an Object
+- otherwise, returns an Array containing the "values" (property values) from the Object argument
+
+Example: `.getObjectValues({a: 'b', b: 'c'})` should return `['b', 'c']`
+
+_Uses the `instanceof` operator and `Object.values()`_
+
+**objectHasProperty()**
+- acepts two arguments
+    - an Object argument
+    - a string argument representing the property name being search for
+- returns `false` if the first argument is not an Object
+- otherwise, returns `true` or `false` depending on whether the Object contains a property with a name matching the second argument
+
+Example: `.objectHasProperty({a: false}, 'a')` should return `true`
+
+Example: `.objectHasProperty({a: false}, 'b')` should return `false`
+
+_Uses the `instanceof` operator and `Object.prototype.hasOwnProperty()`
+
+## Once you're passing
+Once your tests are all passing, you can move on to the next task.
