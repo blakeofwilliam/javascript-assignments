@@ -47,3 +47,4 @@ In order to validate that your code works, simply run `npm test` and ensure that
 
 `git pull origin BRANCH_NAME` pulls the latest version of a branch from the remote repo
 
+### AND THAT'S IT!!!
