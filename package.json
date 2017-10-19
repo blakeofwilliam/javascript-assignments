@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive --require babel-register",
-    "test-solutions": "mocha -s --recursive --require  babel-register"
+    "test-solutions": "mocha -c --recursive --require  babel-register"
   },
   "repository": {
     "type": "git",

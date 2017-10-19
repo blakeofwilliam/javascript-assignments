@@ -9,7 +9,7 @@ const args = Util.getArgs()
 
 let app
 beforeEach(() => {
-    if (args.s) {
+    if (args.c) {
         app = new SolutionApp()
     } else {
         app = new App()
