@@ -39,7 +39,7 @@ This project is set up in three basic directories:
 In order to validate that your code works, simply run `npm test` and ensure that all of the tests pass.
 
 ### Basic git commands for later
-`git fetch` fetches all branches from the remote repo
+`git fetch --prune` fetches and cleans up all branches according to the remote repo
 
 `git branch -a` lists all available branches
 
