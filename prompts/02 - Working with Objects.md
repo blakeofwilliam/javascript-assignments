@@ -1,5 +1,5 @@
 # Working with Objects
-In this section we'll be working with some common Array functions.
+In this section we'll be working with some common Object functions.
 
 The required reading for this section is listed below. You can make the decision as to whether you'd like to work through each reading section one at a time – resolving the test cases immediately after reading each section – or if you'd like to read through it all in one go and solve the tests after.
 
