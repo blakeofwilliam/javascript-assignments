@@ -30,11 +30,11 @@ describe('ObjectUtil', () => {
 
             assert.deepEqual(objectUtil.mergeObjects({}, {a:true}), {a:true})
             sinon.assert.calledOnce(assign)
-            assign.reset()
+            assign.resetHistory()
 
             assert.deepEqual(objectUtil.mergeObjects({a:true}, {b:false}), {a:true, b:false})
             sinon.assert.calledOnce(assign)
-            assign.reset()
+            assign.resetHistory()
 
             assert.deepEqual(objectUtil.mergeObjects({a:true}, {a:false}), {a:false})
             sinon.assert.calledOnce(assign)
@@ -56,11 +56,11 @@ describe('ObjectUtil', () => {
 
             assert.deepEqual(objectUtil.getObjectKeys({}), [])
             sinon.assert.called(keys)
-            keys.reset()
+            keys.resetHistory()
 
             assert.deepEqual(objectUtil.getObjectKeys({a: true, b: false}), ['a', 'b'])
             sinon.assert.called(keys)
-            keys.reset()
+            keys.resetHistory()
 
             assert.deepEqual(objectUtil.getObjectKeys({1:1, 2:2, 3:3}), [1, 2, 3])
             sinon.assert.called(keys)
@@ -82,11 +82,11 @@ describe('ObjectUtil', () => {
 
             assert.deepEqual(objectUtil.getObjectValues({}), [])
             sinon.assert.called(values)
-            values.reset()
+            values.resetHistory()
 
             assert.deepEqual(objectUtil.getObjectValues({a: true, b: false}), [true, false])
             sinon.assert.called(values)
-            values.reset()
+            values.resetHistory()
 
             assert.deepEqual(objectUtil.getObjectValues({1:1, 2:2, 3:3}), [1, 2, 3])
             sinon.assert.called(values)
@@ -108,11 +108,11 @@ describe('ObjectUtil', () => {
 
             assert.deepEqual(objectUtil.objectHasProperty({}, 'test'), false)
             sinon.assert.called(hasOwnProperty)
-            hasOwnProperty.reset()
+            hasOwnProperty.resetHistory()
 
             assert.deepEqual(objectUtil.objectHasProperty({test: 'test'}, 'test'), true)
             sinon.assert.called(hasOwnProperty)
-            hasOwnProperty.reset()
+            hasOwnProperty.resetHistory()
 
             assert.deepEqual(objectUtil.objectHasProperty({1:1, 2:2, 3:3}, 4), false)
             sinon.assert.called(hasOwnProperty)
