@@ -33,41 +33,41 @@ describe('ArrayUtil', () => {
         it('should return `-1` if the argument is not an Array', () => {
             assert.equal(arrayUtil.getArrayLength(), -1)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.getArrayLength(1), -1)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.getArrayLength(false), -1)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.getArrayLength('testval'), -1)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
         })
         // Tests use of `Array.length`
         it('should return the length of the argument', () => {
             assert.equal(arrayUtil.getArrayLength([]), 0)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.getArrayLength([1]), 1)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.getArrayLength([1, 2]), 2)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.getArrayLength([1, 2, 3]), 3)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.getArrayLength([1, 2, 3, 4]), 4)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
         })
     })
 
@@ -76,19 +76,19 @@ describe('ArrayUtil', () => {
         it('should return an empty array if the argument is not an Array', () => {
             assert.deepEqual(arrayUtil.getEvenNumbers(), [])
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.deepEqual(arrayUtil.getEvenNumbers(false), [])
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.deepEqual(arrayUtil.getEvenNumbers(2), [])
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.deepEqual(arrayUtil.getEvenNumbers('testval'), [])
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
         })
         // Tests use of `Array.prototype.filter()`
         it('should return a filtered Array of even numbers', () => {
@@ -97,19 +97,19 @@ describe('ArrayUtil', () => {
             assert.deepEqual(arrayUtil.getEvenNumbers([1, 3, 5, 7]), [])
             sinon.assert.calledOnce(isArray)
             sinon.assert.calledOnce(filter)
-            isArray.reset()
-            filter.reset()
+            isArray.resetHistory()
+            filter.resetHistory()
 
             assert.deepEqual(arrayUtil.getEvenNumbers([2,4,6,8]), [2, 4, 6, 8])
             sinon.assert.calledOnce(isArray)
             sinon.assert.calledOnce(filter)
-            isArray.reset()
-            filter.reset()
+            isArray.resetHistory()
+            filter.resetHistory()
 
             assert.deepEqual(arrayUtil.getEvenNumbers([1, 2, 3, 4]), [2, 4])
             sinon.assert.calledOnce(isArray)
             sinon.assert.calledOnce(filter)
-            isArray.reset()
+            isArray.resetHistory()
             filter.restore()
         })
     })
@@ -120,22 +120,22 @@ describe('ArrayUtil', () => {
             arrayUtil.logArrayValues()
             sinon.assert.calledOnce(isArray)
             sinon.assert.calledWith(logger, 'No array provided!')
-            isArray.reset()
+            isArray.resetHistory()
 
             arrayUtil.logArrayValues(2)
             sinon.assert.calledOnce(isArray)
             sinon.assert.calledWith(logger, 'No array provided!')
-            isArray.reset()
+            isArray.resetHistory()
 
             arrayUtil.logArrayValues(false)
             sinon.assert.calledOnce(isArray)
             sinon.assert.calledWith(logger, 'No array provided!')
-            isArray.reset()
+            isArray.resetHistory()
 
             arrayUtil.logArrayValues('testval')
             sinon.assert.calledOnce(isArray)
             sinon.assert.calledWith(logger, 'No array provided!')
-            isArray.reset()
+            isArray.resetHistory()
         })
         // Tests use of `Array.prototype.forEach()`
         it('should log each value in the Array', () => {
@@ -144,8 +144,8 @@ describe('ArrayUtil', () => {
             sinon.assert.calledOnce(isArray)
             sinon.assert.calledOnce(logger)
             sinon.assert.calledWith(logger, 1)
-            isArray.reset()
-            logger.reset()
+            isArray.resetHistory()
+            logger.resetHistory()
 
             // Second pass
             arrayUtil.logArrayValues([1, 2])
@@ -153,8 +153,8 @@ describe('ArrayUtil', () => {
             sinon.assert.calledTwice(logger)
             sinon.assert.calledWith(logger, 1)
             sinon.assert.calledWith(logger, 2)
-            isArray.reset()
-            logger.reset()
+            isArray.resetHistory()
+            logger.resetHistory()
 
             // Third pass
             arrayUtil.logArrayValues([1, 2, 3])
@@ -163,8 +163,8 @@ describe('ArrayUtil', () => {
             sinon.assert.calledWith(logger, 1)
             sinon.assert.calledWith(logger, 2)
             sinon.assert.calledWith(logger, 3)
-            isArray.reset()
-            logger.reset()
+            isArray.resetHistory()
+            logger.resetHistory()
         })
     })
 
@@ -173,19 +173,19 @@ describe('ArrayUtil', () => {
         it('should return an empty string if the argument is not an Array', () => {
             assert.equal(arrayUtil.createStringFromArray(), "")
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.createStringFromArray(2), "")
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.createStringFromArray(false), "")
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.createStringFromArray('testval'), "")
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
         })
         // Tests use of `Array.prototype.join()`
         it('should return a space delimited string containing each element in the Array', () => {
@@ -194,25 +194,25 @@ describe('ArrayUtil', () => {
             assert.equal(arrayUtil.createStringFromArray([]), "")
             sinon.assert.calledOnce(isArray)
             sinon.assert.called(join)
-            isArray.reset()
-            join.reset()
+            isArray.resetHistory()
+            join.resetHistory()
 
             assert.equal(arrayUtil.createStringFromArray([1]), "1")
             sinon.assert.calledOnce(isArray)
             sinon.assert.called(join)
-            isArray.reset()
-            join.reset()
+            isArray.resetHistory()
+            join.resetHistory()
 
             assert.equal(arrayUtil.createStringFromArray(['hello', 'world']), "hello world")
             sinon.assert.calledOnce(isArray)
             sinon.assert.called(join)
-            isArray.reset()
-            join.reset()
+            isArray.resetHistory()
+            join.resetHistory()
 
             assert.equal(arrayUtil.createStringFromArray(['hello', 'world', 123, '!']), "hello world 123 !")
             sinon.assert.calledOnce(isArray)
             sinon.assert.called(join)
-            isArray.reset()
+            isArray.resetHistory()
             join.restore()
         })
     })
@@ -222,19 +222,19 @@ describe('ArrayUtil', () => {
         it('should return an empty array if the argument is not an Array', () => {
             assert.deepEqual(arrayUtil.doubleArrayValues(), [])
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.deepEqual(arrayUtil.doubleArrayValues(2), [])
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.deepEqual(arrayUtil.doubleArrayValues(false), [])
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.deepEqual(arrayUtil.doubleArrayValues('testval'), [])
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
         })
         // Tests use of `Array.prototype.map()`
         it('should return an array with the doubles of the original array values', () => {
@@ -243,19 +243,19 @@ describe('ArrayUtil', () => {
             assert.deepEqual(arrayUtil.doubleArrayValues([1]), [2])
             sinon.assert.calledOnce(isArray)
             sinon.assert.called(map)
-            isArray.reset()
-            map.reset()
+            isArray.resetHistory()
+            map.resetHistory()
 
             assert.deepEqual(arrayUtil.doubleArrayValues([1, 2]), [2, 4])
             sinon.assert.calledOnce(isArray)
             sinon.assert.called(map)
-            isArray.reset()
-            map.reset()
+            isArray.resetHistory()
+            map.resetHistory()
 
             assert.deepEqual(arrayUtil.doubleArrayValues([1, 2, 3]), [2, 4, 6])
             sinon.assert.calledOnce(isArray)
             sinon.assert.called(map)
-            isArray.reset()
+            isArray.resetHistory()
             map.restore()
         })
     })
@@ -265,19 +265,19 @@ describe('ArrayUtil', () => {
         it('should return `-1` if the argument is not an Array', () => {
             assert.equal(arrayUtil.sumArrayValues(), -1)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.sumArrayValues(2), -1)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.sumArrayValues(false), -1)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
 
             assert.equal(arrayUtil.sumArrayValues('testval'), -1)
             sinon.assert.calledOnce(isArray)
-            isArray.reset()
+            isArray.resetHistory()
         })
         // Tests use of `Array.prototype.reduce()`
         it('should return the sum of all array values', () => {
@@ -286,25 +286,25 @@ describe('ArrayUtil', () => {
             assert.equal(arrayUtil.sumArrayValues([1]), 1)
             sinon.assert.calledOnce(isArray)
             sinon.assert.called(reduce)
-            isArray.reset()
-            reduce.reset()
+            isArray.resetHistory()
+            reduce.resetHistory()
 
             assert.equal(arrayUtil.sumArrayValues([1, 2]), 3)
             sinon.assert.calledOnce(isArray)
             sinon.assert.called(reduce)
-            isArray.reset()
-            reduce.reset()
+            isArray.resetHistory()
+            reduce.resetHistory()
 
             assert.equal(arrayUtil.sumArrayValues([1, 2, 3]), 6)
             sinon.assert.calledOnce(isArray)
             sinon.assert.called(reduce)
-            isArray.reset()
-            reduce.reset()
+            isArray.resetHistory()
+            reduce.resetHistory()
 
             assert.equal(arrayUtil.sumArrayValues([1, 2, 3, 4]), 10)
             sinon.assert.calledOnce(isArray)
             sinon.assert.called(reduce)
-            isArray.reset()
+            isArray.resetHistory()
             reduce.restore()
         })
     })
