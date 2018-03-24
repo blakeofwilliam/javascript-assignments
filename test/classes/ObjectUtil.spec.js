@@ -119,4 +119,91 @@ describe('ObjectUtil', () => {
             hasOwnProperty.restore()
         })
     })
+
+    describe('getValidObjectKeys()', () => {
+        it('should return an empty array if first argument is not an Object', () => {
+            assert.deepEqual(objectUtil.getValidObjectKeys(null, ['test']), [])
+        })
+
+        it('should return an empty array if second argument is not an Array', () => {
+            assert.deepEqual(objectUtil.getValidObjectKeys({ test: true }, null), [])
+        })
+
+        it('should return an array of filtered keys', () => {
+            const obj = {
+                test: true,
+                valid: false
+            }
+
+            assert.deepEqual(objectUtil.getValidObjectKeys(obj, ['test']), ['test'])
+            assert.deepEqual(objectUtil.getValidObjectKeys(obj, ['valid']), ['valid'])
+            assert.deepEqual(objectUtil.getValidObjectKeys(obj, ['test', 'valid']), ['test', 'valid'])
+            assert.deepEqual(objectUtil.getValidObjectKeys(obj, ['unknown']), [])
+        })
+    })
+
+    describe('filterObject()', () => {
+        it('should return an empty object if first argument is not an Object', () => {
+            assert.deepEqual(objectUtil.filterObject(null, ['test']), {})
+        })
+
+        it('should return an empty object if second argument is not an Array', () => {
+            assert.deepEqual(objectUtil.filterObject({ test: true }, null), {})
+        })
+
+        it('should return a filtered object', () => {
+            const obj = {
+                test: true,
+                valid: false
+            }
+
+            assert.deepEqual(objectUtil.filterObject(obj, ['test']), { test: true })
+            assert.deepEqual(objectUtil.filterObject(obj, ['valid']), { valid: false })
+            assert.deepEqual(objectUtil.filterObject(obj, ['test', 'valid']), obj)
+            assert.deepEqual(objectUtil.filterObject(obj, ['unknown']), {})
+        })
+    })
+
+    describe('excludeInvalidObjectKeys()', () => {
+        it('should return an empty array if first argument is not an Object', () => {
+            assert.deepEqual(objectUtil.excludeInvalidObjectKeys(null, ['forbidden']), [])
+        })
+
+        it('should return an empty array if second argument is not an Array', () => {
+            assert.deepEqual(objectUtil.excludeInvalidObjectKeys({ test: true }, null), [])
+        })
+
+        it('should return an array of filtered keys', () => {
+            const obj = {
+                test: true,
+                valid: false,
+                forbidden: true
+            }
+
+            assert.deepEqual(objectUtil.excludeInvalidObjectKeys(obj, ['forbidden']), ['test', 'valid'])
+            assert.deepEqual(objectUtil.excludeInvalidObjectKeys(obj, ['unknown']), Object.keys(obj))
+        })
+    })
+
+    describe('sanitizeObject()', () => {
+        it('should return an empty object if first argument is not an Object', () => {
+            assert.deepEqual(objectUtil.sanitizeObject(null, ['forbidden']), {})
+        })
+
+        it('should return an empty object if second argument is not an Array', () => {
+            assert.deepEqual(objectUtil.sanitizeObject({ test: true }, null), {})
+        })
+
+        it('should return a sanitized object', () => {
+            const obj = {
+                test: true,
+                valid: false,
+                forbidden: true
+            }
+
+            assert.deepEqual(objectUtil.sanitizeObject(obj, ['forbidden']), { test: true, valid: false })
+            assert.deepEqual(objectUtil.sanitizeObject(obj, ['test', 'valid', 'forbidden']), {})
+            assert.deepEqual(objectUtil.sanitizeObject(obj, ['unknown']), obj)
+        })
+    })
 })
